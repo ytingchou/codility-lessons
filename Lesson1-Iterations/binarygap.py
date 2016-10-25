@@ -3,24 +3,24 @@ def solution(N):
     if N < 5:
         return 0
 
+    # Skip the tailing zero(s)
+    while N > 0 and N % 2 == 0:
+        N >>= 1
+
     max_binary_gap = 0
     gap_count = 0
-    found_gap_bound = False
 
     while N > 0:
         remainder = N % 2
-        N >>= 1
 
         if remainder > 0:
-            if found_gap_bound:
+            if gap_count > 0:
                 max_binary_gap = max(gap_count, max_binary_gap)
                 gap_count = 0
-            else:
-                found_gap_bound = True
         else:
-            if found_gap_bound:
-                gap_count += 1
+            gap_count += 1
 
+        N >>= 1
 
     return max_binary_gap
 
