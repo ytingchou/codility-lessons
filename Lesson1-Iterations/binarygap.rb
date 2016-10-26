@@ -4,7 +4,7 @@ def solution(n)
         return 0
     end
 
-    # Skip the tailing zero(s)
+    # Skip the trailing zero(s)
     until n == 0 || n % 2 == 1 do
         n >>= 1
     end

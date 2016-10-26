@@ -3,7 +3,7 @@ def solution(N):
     if N < 5:
         return 0
 
-    # Skip the tailing zero(s)
+    # Skip the trailing zero(s)
     while N > 0 and N % 2 == 0:
         N >>= 1
 
