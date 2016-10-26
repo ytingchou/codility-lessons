@@ -10,7 +10,7 @@ def solution(n)
         # Find current LSB
         k = n & -n
 
-        # Get current position of LSB
+        # Get position of current LSB
         curr = Math.log2(k)
 
         # Remove current LSB
